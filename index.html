@@ -1,0 +1,65 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>La Especial de París · desde 1921</title><meta name="description" content="Helados y nieves desde 1921. Menú, horarios, ubicación y pedidos por WhatsApp.">
+<meta name="theme-color" content="#0f5c5a"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"><link rel="icon" href="img/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="La Especial">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#0f5c5a;--or:#e07a2e;--cream:#f7efe3;--ink:#22201d;--mut:#857a6f}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,system-ui,sans-serif;background:var(--cream);color:var(--ink);max-width:520px;margin:0 auto;padding-bottom:110px}
+header{position:sticky;top:0;z-index:20;background:rgba(247,239,227,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:flex;justify-content:space-between;align-items:center;padding:calc(12px + env(safe-area-inset-top)) 20px 12px;border-bottom:1px solid #eadfce}
+.wm{font-family:'Playfair Display';font-weight:700;color:var(--teal);font-size:19px;line-height:1}.wm small{display:block;font:600 10px Inter;letter-spacing:.2em;color:var(--or);text-transform:uppercase;margin-top:3px}
+nav a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:500;margin-left:14px}
+.hero{position:relative;height:78vh;min-height:520px;max-height:700px;background:url(img/hero.jpg) center/cover;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:30px 24px}
+.hero:before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(8,40,39,.1),rgba(8,40,39,.9))}.hero>*{position:relative}
+.orn{font:500 12px Inter;letter-spacing:.3em;text-transform:uppercase;color:#ffc58f;display:flex;align-items:center;gap:10px}.orn:before,.orn:after{content:'';height:1px;width:28px;background:#ffc58f}
+.hero h1{font-family:'Playfair Display';font-size:46px;line-height:1.02;margin:14px 0}.hero h1 i{font-weight:500;color:#ffc58f}.hero p{opacity:.88;line-height:1.55;font-size:16px;margin-bottom:22px}
+.cta{display:inline-block;background:var(--or);color:#fff;border:0;border-radius:40px;padding:15px 26px;font:600 15px Inter;text-decoration:none;cursor:pointer}.cta.t{background:var(--teal)}
+section{padding:46px 22px 10px}h2{font-family:'Playfair Display';font-size:32px;margin-bottom:6px}.sub{color:var(--mut);margin-bottom:22px;font-size:14.5px}
+.it{display:flex;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid #e8dccb}.it img{width:92px;height:92px;border-radius:50%;object-fit:cover;box-shadow:0 6px 16px rgba(60,40,20,.15)}.it .t{flex:1}.it b{font-family:'Playfair Display';font-size:19px;display:block}.it p{font-size:13px;color:var(--mut);margin:3px 0 7px;line-height:1.4}
+.sz{display:flex;gap:6px;flex-wrap:wrap}.sz button{border:1.5px solid var(--teal);background:transparent;color:var(--teal);border-radius:20px;padding:6px 11px;font:600 12.5px Inter;cursor:pointer}.sz button:active{background:var(--teal);color:#fff}
+.tag{font:700 10px Inter;background:#ffe6d1;color:#b4561a;padding:3px 7px;border-radius:6px;vertical-align:middle;margin-left:4px}
+.card{background:#fffaf3;border-radius:22px;padding:20px;box-shadow:0 6px 20px rgba(60,40,20,.07);margin-bottom:14px}
+.hr{display:flex;justify-content:space-between;padding:10px 0;font-size:15px}.hr+.hr{border-top:1px dashed #e2d5c2}
+.map{display:block;height:180px;border-radius:18px;background:linear-gradient(135deg,#cfe3e0,#e9dccb);position:relative;text-decoration:none;color:var(--ink);overflow:hidden;margin-bottom:12px}.map:after{content:'📍';position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);font-size:42px}.map span{position:absolute;bottom:12px;left:14px;background:#fff;padding:7px 12px;border-radius:12px;font-size:13px;font-weight:600}
+.map i{position:absolute;background:rgba(255,255,255,.7)}
+.qr{display:flex;gap:18px;align-items:center}.qr img{width:120px;border-radius:14px;background:#fffaf3;padding:6px}
+.bar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:520px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));z-index:30;display:none}.bar.on{display:block}
+.bar button{width:100%;background:#1f8f5a;color:#fff;border:0;border-radius:18px;padding:16px;font:600 16px Inter;display:flex;justify-content:space-between;align-items:center;box-shadow:0 10px 30px rgba(0,0,0,.25);cursor:pointer}
+.bar .n{background:rgba(255,255,255,.25);border-radius:10px;padding:2px 9px;margin-right:8px}
+.drawer{position:fixed;inset:0;z-index:40;display:none}.drawer.on{display:block}.drawer .bg{position:absolute;inset:0;background:rgba(0,0,0,.35)}.drawer .p{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:520px;background:var(--cream);border-radius:26px 26px 0 0;padding:22px 20px calc(24px + env(safe-area-inset-bottom));max-height:85vh;overflow:auto}
+.ci{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #e8dccb;font-size:14.5px}.ci button{width:28px;height:28px;border-radius:50%;border:1.5px solid #d6c7b2;background:#fff;cursor:pointer}
+input,select{width:100%;padding:13px;border:1.5px solid #e2d5c2;border-radius:14px;font:15px Inter;margin-top:10px;background:#fff}
+.hint{position:fixed;left:12px;right:12px;bottom:84px;max-width:496px;margin:0 auto;background:var(--ink);color:#fff;border-radius:18px;padding:14px 16px;font-size:13.5px;line-height:1.45;z-index:35;display:none;gap:12px;align-items:center}.hint.on{display:flex}.hint img{width:44px;border-radius:10px}.hint button{background:none;border:0;color:#fff;font-size:18px;cursor:pointer}
+footer{text-align:center;color:var(--mut);font-size:11.5px;padding:30px 20px;line-height:1.7}
+</style></head><body>
+<header><div class="wm">La Especial de París<small>desde 1921</small></div><nav><a href="#menu">Menú</a><a href="#visita">Visítanos</a></nav></header>
+<div class="hero"><div class="orn">Helados artesanales</div><h1>La Especial<br><i>de París</i></h1><p>El mejor helado para quien valora la calidad y el sabor. Nieves y helados hechos con la tradición de más de un siglo.</p><div><a class="cta" href="#menu">Ver sabores y pedir</a></div></div>
+<section id="menu"><div class="orn" style="color:var(--or)">Menú</div><h2>Nuestros sabores</h2><p class="sub">Elige tamaño y agrégalo. Tu pedido nos llega por WhatsApp.</p><div id="list"></div><p class="sub" style="margin-top:14px;font-size:12px">Precios de ejemplo · Sencillo · Doble · Litro</p></section>
+<section id="visita"><h2>Horarios</h2><p class="sub">Te esperamos en el Centro.</p><div class="card" id="hrs"></div>
+<h2 style="margin-top:30px">Ubicación</h2><p class="sub">Insurgentes Centro 117, Tabacalera, CDMX 06470</p>
+<a class="map" href="https://maps.google.com/?q=Insurgentes+Centro+117,+Tabacalera,+CDMX+06470" target="_blank" rel="noopener"><i style="left:0;right:0;top:40%;height:12px"></i><i style="top:0;bottom:0;left:30%;width:10px"></i><i style="top:0;bottom:0;left:72%;width:7px"></i><span>Abrir en Google Maps ›</span></a></section>
+<section><div class="card" style="background:var(--teal);color:#f7efe3"><div class="qr"><img src="img/qr.png" alt="QR"><div><b style="font-family:'Playfair Display';font-size:21px">Escanea en el mostrador</b><p style="font-size:13.5px;opacity:.85;margin-top:6px;line-height:1.5">Un QR en la tienda abre esta página. El cliente pide y la guarda en su celular como una app.</p></div></div></div>
+<div class="card"><b style="font-family:'Playfair Display';font-size:19px">📲 Guárdala como app</b><p style="font-size:14px;color:var(--mut);margin-top:6px;line-height:1.5">En iPhone toca <b>Compartir</b> y luego <b>Agregar a inicio</b>. En Android toca <b>⋮</b> y luego <b>Instalar app</b>.</p><button class="cta t" style="margin-top:14px" id="inst" onclick="inst()">Instalar</button></div></section>
+<footer>Precios y horarios de ejemplo · WhatsApp de prueba 55 2112 8404<br>Demo hecho por Eduardo García Soluciones</footer>
+<div class="hint" id="hint"><img src="img/apple-touch-icon.png" alt=""><div style="flex:1">Instálala: toca <b>Compartir ⬆︎</b> y luego <b>“Agregar a inicio”</b>.</div><button onclick="this.parentNode.classList.remove('on')">✕</button></div>
+<div class="bar" id="bar"><button onclick="openD()"><span><span class="n" id="cnt">0</span>Ver pedido</span><span id="tot">$0</span></button></div>
+<div class="drawer" id="dr"><div class="bg" onclick="closeD()"></div><div class="p"><h2 style="font-size:26px">Tu pedido</h2><div id="items"></div>
+<select id="mo"><option>Paso a recoger</option><option>A domicilio</option></select><input id="nm" placeholder="Tu nombre"><input id="nt" placeholder="Notas (opcional)">
+<div class="hr" style="margin-top:10px"><b>Total</b><b id="tot2"></b></div><button class="cta" style="width:100%;background:#1f8f5a;margin-top:10px;font-size:16px" onclick="wa()">Pedir por WhatsApp</button><p style="font-size:11.5px;color:var(--mut);text-align:center;margin-top:10px">Demo: se abre WhatsApp con el pedido listo hacia el número de prueba 55 2112 8404.</p></div></div>
+<script>
+const F=[['calabaza','Helado de Calabaza','De temporada, con un toque de especias.',1],['chabacano','Nieve de Chabacano','Fresca, natural y llena de sabor.',1],['granada','Nieve de Granada','Granada roja, ligera y refrescante.'],['turron','Helado de Turrón','Cremoso, con trocitos de almendra.'],['canela','Helado de Canela','Canela en raja, suave y aromático.']];
+const S=[['Sencillo',55],['Doble',85],['Litro',220]];let cart={};const $=i=>document.getElementById(i),m=n=>'$'+n.toLocaleString('es-MX');
+$('list').innerHTML=F.map(f=>`<div class="it"><img src="img/${f[0]}.jpg" alt="${f[1]}" loading="lazy"><div class="t"><b>${f[1]}${f[3]?'<span class="tag">Temporada</span>':''}</b><p>${f[2]}</p><div class="sz">${S.map((s,i)=>`<button onclick="add('${f[0]}',${i})">+ ${s[0]} ${m(s[1])}</button>`).join('')}</div></div></div>`).join('');
+$('hrs').innerHTML=[['Lunes a viernes','11:00 – 20:00'],['Sábado','11:00 – 21:00'],['Domingo','11:00 – 20:00']].map(h=>`<div class="hr"><span>${h[0]}</span><b>${h[1]}</b></div>`).join('')+'<p style="font-size:11.5px;color:var(--mut);margin-top:6px">Horarios de ejemplo</p>';
+const nm=id=>F.find(f=>f[0]==id)[1];
+function add(id,s){const k=id+'|'+s;cart[k]=(cart[k]||0)+1;upd()}
+function upd(){let n=0,t=0;for(const k in cart){const s=+k.split('|')[1];n+=cart[k];t+=cart[k]*S[s][1]}$('bar').classList.toggle('on',n>0);$('cnt').textContent=n;$('tot').textContent=$('tot2').textContent=m(t);
+$('items').innerHTML=Object.keys(cart).map(k=>{const[id,s]=k.split('|');return`<div class="ci"><span>${nm(id)} · ${S[s][0]}</span><span><button onclick="ch('${k}',-1)">−</button> <b>${cart[k]}</b> <button onclick="ch('${k}',1)">+</button></span></div>`}).join('');return t}
+function ch(k,d){cart[k]+=d;if(cart[k]<=0)delete cart[k];if(!Object.keys(cart).length)closeD();upd()}
+function openD(){$('dr').classList.add('on')}function closeD(){$('dr').classList.remove('on')}
+function wa(){const t=upd();let s='¡Hola, La Especial de París! 🍦 Quiero hacer un pedido:\n\n';for(const k in cart){const[id,i]=k.split('|');s+=`• ${cart[k]} × ${nm(id)} (${S[i][0]}) – ${m(cart[k]*S[i][1])}\n`}s+=`\nTotal: ${m(t)}\nEntrega: ${$('mo').value}`;if($('nm').value)s+=`\nNombre: ${$('nm').value}`;if($('nt').value)s+=`\nNotas: ${$('nt').value}`;window.open('https://wa.me/525521128404?text='+encodeURIComponent(s),'_blank')}
+let dp;addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e});function inst(){dp?dp.prompt():$('hint').classList.add('on')}
+const ios=/iphone|ipad/i.test(navigator.userAgent),sa=navigator.standalone||matchMedia('(display-mode: standalone)').matches;if((ios&&!sa)||location.search.includes('hint'))setTimeout(()=>$('hint').classList.add('on'),2500);
+if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js');
+if(location.search.includes('cart')){add('chabacano',1);add('calabaza',0);add('calabaza',0);if(location.search.includes('open'))openD()}
+</script></body></html>
